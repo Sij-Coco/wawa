@@ -1,84 +1,131 @@
 // Elements
 const envelope = document.getElementById("envelope-container");
 const letter = document.getElementById("letter-container");
+
+const letterWindow = document.querySelector(".letter-window");
+
+// Message windows
+const messageWindow1 = document.getElementById("message-window"); // Window 1
+const extraMessageWindows = document.querySelectorAll(".message-window"); // Windows 2..N
+const valentineWindow = document.getElementById("valentine-window");
+
+// Next buttons
+const nextBtn1 = document.getElementById("next-btn"); // the very first next button (has unique id)
+
+// Valentine elements
 const noBtn = document.querySelector(".no-btn");
-const yesBtn = document.querySelector(".btn[alt='Yes']");
+const yesBtn = document.querySelector(".yes-btn");
 
 const title = document.getElementById("letter-title");
 const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
 
-const nextBtn = document.getElementById("next-btn");
-const messageWindow = document.getElementById("message-window");
-const valentineWindow = document.getElementById("valentine-window");
+// -------------------------
+// Window navigation logic
+// -------------------------
+let step = 0; 
+// step 0 = messageWindow1
+// step 1..extraMessageWindows.length = extraMessageWindows[step-1]
+// step > extraMessageWindows.length = valentineWindow
 
-//click next
+function showStep() {
+  // Hide all
+  messageWindow1.style.display = "none";
+  extraMessageWindows.forEach(w => (w.style.display = "none"));
+  valentineWindow.style.display = "none";
 
-nextBtn.addEventListener("click", () => {
-  messageWindow.style.display = "none";
-  valentineWindow.style.display = "block";
-});
+  // Show correct one
+  if (step === 0) {
+    messageWindow1.style.display = "block";
+  } else if (step >= 1 && step <= extraMessageWindows.length) {
+    extraMessageWindows[step - 1].style.display = "block";
+  } else {
+    valentineWindow.style.display = "block";
+  }
+}
 
-
-// Click Envelope
-
+// Click Envelope -> open letter + start at first window
 envelope.addEventListener("click", () => {
-    envelope.style.display = "none";
-    letter.style.display = "flex";
+  envelope.style.display = "none";
+  letter.style.display = "flex";
 
-    setTimeout( () => {
-        document.querySelector(".letter-window").classList.add("open");
-    },50);
+  step = 0;
+  showStep();
+
+  setTimeout(() => {
+    letterWindow.classList.add("open");
+  }, 50);
 });
 
-// Logic to move the NO btn
+// First NEXT -> go to next step
+if (nextBtn1) {
+  nextBtn1.addEventListener("click", () => {
+    step++;
+    showStep();
+  });
+}
 
-noBtn.addEventListener("mouseover", () => {
-    const min = 200;
-    const max = 200;
+// All OTHER NEXT buttons -> go to next step (event delegation)
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("next-btn") && e.target !== nextBtn1) {
+    step++;
+    showStep();
+  }
+});
 
-    const distance = Math.random() * (max - min) + min;
+// -------------------------
+// NO button dodging logic
+// -------------------------
+if (noBtn) {
+  noBtn.addEventListener("mouseover", () => {
+    const distance = 200; // fixed distance (you can change this)
+
     const angle = Math.random() * Math.PI * 2;
-
     const moveX = Math.cos(angle) * distance;
     const moveY = Math.sin(angle) * distance;
 
     noBtn.style.transition = "transform 0.3s ease";
     noBtn.style.transform = `translate(${moveX}px, ${moveY}px)`;
-});
+  });
+}
 
-// Logic to make YES btn to grow
-
+// -------------------------
+// YES grows when NO clicked
+// -------------------------
 let yesScale = 1;
 
-yesBtn.style.position = "relative"
-yesBtn.style.transformOrigin = "center center";
-yesBtn.style.transition = "transform 0.3s ease";
+if (yesBtn) {
+  yesBtn.style.position = "relative";
+  yesBtn.style.transformOrigin = "center center";
+  yesBtn.style.transition = "transform 0.3s ease";
+}
 
-noBtn.addEventListener("click", () => {
+if (noBtn && yesBtn) {
+  noBtn.addEventListener("click", () => {
     yesScale += 2;
 
     if (yesBtn.style.position !== "fixed") {
-        yesBtn.style.position = "fixed";
-        yesBtn.style.top = "50%";
-        yesBtn.style.left = "50%";
-        yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
-    }else{
-        yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
+      yesBtn.style.position = "fixed";
+      yesBtn.style.top = "50%";
+      yesBtn.style.left = "50%";
     }
-});
 
-// YES is clicked
+    yesBtn.style.transform = `translate(-50%, -50%) scale(${yesScale})`;
+  });
+}
 
-yesBtn.addEventListener("click", () => {
+// -------------------------
+// YES is clicked (final screen)
+// -------------------------
+if (yesBtn) {
+  yesBtn.addEventListener("click", () => {
     title.textContent = "Yippeeee!";
-
     catImg.src = "cat_dance.gif";
 
-    document.querySelector(".letter-window").classList.add("final");
+    letterWindow.classList.add("final");
 
     buttons.style.display = "none";
-
     finalText.style.display = "block";
-});
+  });
+}
