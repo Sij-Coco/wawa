@@ -123,4 +123,17 @@ p {
 
 /* NEXT button image */
 .next-btn {
-    width: 160px;       /* change size if you wan*
+    width: 160px;       /* change size if you want */
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+.final-text {
+    font-size: 22px;
+    line-height: 1.4;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 240, 240, 0.5);
+    border-radius: 12px;
+}
