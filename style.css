@@ -137,3 +137,9 @@ display: inline-block;
     background-color: rgba(255,240,240,0.5);
     border-radius: 12px;
 }
+
+.next-btn {
+    width: 160px;        /* change size if you want */
+    margin-top: 10px;
+    cursor: pointer;
+}
