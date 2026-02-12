@@ -9,6 +9,18 @@ const catImg = document.getElementById("letter-cat");
 const buttons = document.getElementById("letter-buttons");
 const finalText = document.getElementById("final-text");
 
+const nextBtn = document.getElementById("next-btn");
+const messageWindow = document.getElementById("message-window");
+const valentineWindow = document.getElementById("valentine-window");
+
+//click next
+
+nextBtn.addEventListener("click", () => {
+  messageWindow.style.display = "none";
+  valentineWindow.style.display = "block";
+});
+
+
 // Click Envelope
 
 envelope.addEventListener("click", () => {
