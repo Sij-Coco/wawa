@@ -1,65 +1,186 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Valentine Letter</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Valentine Letter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
-    <!-- Envelope Screen -->
-    <div id="envelope-container">
-      <img src="strawgwenny.png" alt="Envelope" id="envelope" />
-      <p>♡ YOU HAVE A LETTER FROM MEEEE YESYISYES ♡</p>
-    </div>
-    <!--yesyis-->
-    <!-- Letter Screen -->
-    <div id="letter-container">
-      <div class="letter-window">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap"
+    rel="stylesheet" />
+</head>
 
-        <!-- WINDOW 1: Message Window -->
-        <div id="message-window">
-          <h1>Message.exe</h1>
+<body>
+  <!-- Envelope Screen -->
+  <div id="envelope-container">
+    <img src="strawgwenny.png" alt="Envelope" id="envelope" />
+    <p>♡ YOU HAVE A LETTER FROM MEEEE YESYISYES ♡</p>
+  </div>
 
-          <!-- EDIT THESE TEXTS -->
-          <p class="msg">Hello gwenny!!!, I just wanted to say…</p>
-          <p class="msg">I LIIKEEEEEE YOUUUUUUU SOO MUCCHHHH</p>
-          <p class="msg">SO HERES A LITTLE MESSAGE FOR YOUUUU</p>
+  <!-- Letter Screen -->
+  <div id="letter-container">
+    <div class="letter-window">
 
-          <img src="next.png" id="next-btn" class="btn next-btn" alt="Next" />
-
-        </div>
-
-        <!-- WINDOW 2: Valentine Window -->
-        <div id="valentine-window" style="display: none;">
-          <h1 id="letter-title">Will you be my Valentine?</h1>
-
-          <img src="cat_heart.gif" class="cat" id="letter-cat" alt="Cat" />
-
-          <div class="buttons" id="letter-buttons">
-            <img src="yes.png" class="btn yes-btn" alt="Yes" />
-
-            <div class="no-wrapper">
-              <img src="no.png" class="btn no-btn" alt="No" />
-            </div>
-          </div>
-
-          <p id="final-text" class="final-text" style="display: none">
-            <strong>YAAYYY, IF YOU SEE THIS PLEASE TAKE A SCREENSHOT AND SEND IT TO ME</strong>
-          </p>
-        </div>
-
+      <!-- WINDOW 1 -->
+      <div id="message-window">
+        <h1>Message.exe</h1>
+        <p class="msg">Hello gwenny! I just wanted to say</p>
+        <p class="msg">I LIKE YOUUUUUUUUUUU</p>
+        <p class="msg">SO HERES A LITTLE MSG FROM ME</p>
+        <img src="next.png" id="next-btn" class="btn next-btn" alt="Next" />
       </div>
-    </div>
 
-    <script src="script.js"></script>
-  </body>
+      <!-- WINDOW 2 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">As you're probably aware,</p>
+        <p class="msg">I've liked you for a long time na</p>
+        <p class="msg">and that I've always held them back.</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 3 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">and like I said</p>
+        <p class="msg">theres no specific reason</p>
+        <p class="msg">why I like you</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 4 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">But that's not to say</p>
+        <p class="msg">na I don't find things about you</p>
+        <p class="msg">that I like</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 5 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">so here are some things</p>
+        <p class="msg">that I like and admire</p>
+        <p class="msg">about you.</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 6 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">your smile</p>
+        <p class="msg">your mindset</p>
+        <p class="msg">your kindness</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 7 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">the way you care about others</p>
+        <p class="msg">your thoughtfulness</p>
+        <p class="msg">your funny personality</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 8 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">your ways of delivering words</p>
+        <p class="msg">your intelligence</p>
+        <p class="msg">your writings</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 9 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">the way you work on yourself</p>
+        <p class="msg">your perseverance</p>
+        <p class="msg">your discipline</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 10 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">your quiet but loud presence</p>
+        <p class="msg">and about 300 more things</p>
+        <p class="msg">that I couldn't list</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 11 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">WAG MOKO TAWANAN OKAY</p>
+        <p class="msg">I tried my best here</p>
+        <p class="msg">I know what you're thinking...</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 12 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">YOU THINK ITS CORNNYYY</p>
+        <p class="msg">AAAAA OONAAAA HAHAHAHA</p>
+        <p class="msg">IT IS CORNY</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 13 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">BUT WHO CARES RIGHT</p>
+        <p class="msg">it is corny, it is cringe</p>
+        <p class="msg">and yeahhh...</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 14 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">I can't tell you enough here</p>
+        <p class="msg">but all I want to say to you is</p>
+        <p class="msg">YOU'RE MY SPECIAL SOMEONEEE</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- WINDOW 15 -->
+      <div class="message-window" style="display: none;">
+        <h1>Message.exe</h1>
+        <p class="msg">I hope we can be bestfriends forever</p>
+        <p class="msg">I LOVE YOUUUUUUUUU</p>
+        <p class="msg">YOU DESERVE ALL THE GOOD THINGS IN LIFE</p>
+        <img src="next.png" class="btn next-btn" alt="Next" />
+      </div>
+
+      <!-- FINAL VALENTINE WINDOW -->
+      <div id="valentine-window" style="display: none;">
+        <h1 id="letter-title">Will you be my Valentine?</h1>
+
+        <img src="cat_heart.gif" class="cat" id="letter-cat" alt="Cat" />
+
+        <div class="buttons" id="letter-buttons">
+          <img src="yes.png" class="btn yes-btn" alt="Yes" />
+          <div class="no-wrapper">
+            <img src="no.png" class="btn no-btn" alt="No" />
+          </div>
+        </div>
+
+        <p id="final-text" class="final-text" style="display: none">
+          <strong>YAAYYY, IF YOU SEE THIS PLEASE TAKE A SCREENSHOT AND SEND IT TO ME</strong>
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
